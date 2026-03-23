@@ -129,22 +129,26 @@ const form = document.getElementById("form");
 const msg = document.getElementById("msg");
 
 form.addEventListener("submit", async function(e) {
-  e.preventDefault();
+  e.preventDefault(); // 🚨 مهم جداً
 
   const data = new FormData(form);
 
-  const response = await fetch("https://formspree.io/f/mpqyggwj", {
-    method: "POST",
-    body: data,
-    headers: {
-      'Accept': 'application/json'
+  try {
+    const response = await fetch("https://formspree.io/f/yourID", {
+      method: "POST",
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      msg.style.display = "block";
+      form.reset();
+    } else {
+      alert("Something went wrong ❌");
     }
-  });
-
-  if (response.ok) {
-    msg.style.display = "block";
-
-    // 👇 هون المكان الصح
-    form.reset();
+  } catch (error) {
+    alert("Error sending message ❌");
   }
 });
