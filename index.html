@@ -507,17 +507,19 @@
             </div>
         </div>
         <div class="contact-box">
-          <form action="">
+          <form id="form" action="https://formspree.io/f/mpqyggwj"
+           method="POST">
             <h2 class="heading">Contact <span>Me!</span></h2>
             <div class="field-box">
-              <input type="text" placeholder="Full Name" required>
-              <input type="email" placeholder="Email Address" required>
-              <input type="text" placeholder="Phone Number" required>
-              <input type="text" placeholder="Email Subject" required>
-              <textarea name="" id="" placeholder="Your Message" required></textarea>
+              <input type="text" name="name" placeholder="Full Name" required>
+              <input type="email" name="email" placeholder="Email Address" required>
+              <input type="text" name="phone" placeholder="Phone Number" required>
+              <input type="text" name="Subject" placeholder="Email Subject" required>
+              <textarea name="message" id="" placeholder="Your Message" required></textarea>
             </div>
             <button type="submit" class="btn">Send Message</button>
           </form>
+          <p id="msg" style="display: none; color: green;">Message sent successfully ✅</p>
         </div>
       </div>
      </section>

@@ -124,3 +124,27 @@ arrowLeft.addEventListener('click', () =>{
     }
     activePortfolio();
 })
+
+const form = document.getElementById("form");
+const msg = document.getElementById("msg");
+
+form.addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const data = new FormData(form);
+
+  const response = await fetch("https://formspree.io/f/mpqyggwj", {
+    method: "POST",
+    body: data,
+    headers: {
+      'Accept': 'application/json'
+    }
+  });
+
+  if (response.ok) {
+    msg.style.display = "block";
+
+    // 👇 هون المكان الصح
+    form.reset();
+  }
+});
