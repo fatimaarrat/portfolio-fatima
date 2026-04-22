@@ -475,6 +475,12 @@ section.active{
 .resume-detail.skills .resume-item .ph:hover{
     content: url(img/photoshop\ 2.png);
 }
+.resume-detail.skills .resume-item .po:hover{
+    content: url(img/Postman2.png);
+}
+.resume-detail.skills .resume-item .no:hover{
+    content: url(img/next\ 2.png);
+}
 .resume-detail.skills .resume-item .af:hover{
     content: url(img/after-effects\ 2.png);
 }
