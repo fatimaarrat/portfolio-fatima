@@ -92,11 +92,11 @@ const activePortfolio = () => {
 };
 
 arrowRight.addEventListener("click", () => {
-  if (index < 5) {
+  if (index < 2) {
     index++;
     arrowLeft.classList.remove("disabled");
   } else {
-    index = 6;
+    index = 3;
     arrowRight.classList.add("disabled");
   }
   activePortfolio();
@@ -111,6 +111,46 @@ arrowLeft.addEventListener("click", () => {
     arrowLeft.classList.add("disabled");
   }
   activePortfolio();
+});
+
+const arrowRight1 = document.querySelector(
+  ".portfolio-box1 .navigation .arrow-right",
+);
+const arrowLeft1 = document.querySelector(
+  ".portfolio-box1 .navigation .arrow-left",
+);
+
+let indexa = 0;
+const activePortfolio1 = () => {
+  const imgSlide1 = document.querySelector(".portfolio-carousel1 .img-slide");
+  const portfolioDetails1 = document.querySelectorAll(".portfolio-detail1");
+  imgSlide1.style.transform = `translateX(calc(${indexa * -100}% - ${indexa * 2}rem))`;
+  portfolioDetails1.forEach((detail) => {
+    detail.classList.remove("active");
+  });
+  portfolioDetails1[indexa].classList.add("active");
+};
+
+arrowRight1.addEventListener("click", () => {
+  if (indexa < 7) {
+    indexa++;
+    arrowLeft1.classList.remove("disabled");
+  } else {
+    indexa = 8;
+    arrowRight1.classList.add("disabled");
+  }
+  activePortfolio1();
+});
+
+arrowLeft1.addEventListener("click", () => {
+  if (indexa > 1) {
+    indexa--;
+    arrowRight1.classList.remove("disabled");
+  } else {
+    indexa = 0;
+    arrowLeft1.classList.add("disabled");
+  }
+  activePortfolio1();
 });
 
 const form = document.getElementById("form");
